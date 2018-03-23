@@ -16,6 +16,7 @@ package com.leetcode.easy;
  * Created by wangke on 2018/3/20.
  */
 public class RomantoInteger {
+
     public int romanToInt(String s) {
         int result = 0;
         for (int i = 0; i < s.length(); i++) {
@@ -25,11 +26,15 @@ public class RomantoInteger {
             } else if (ch == 'D') {
                 result += 500;
             } else if (ch == 'C') {
-                result += 100;
+                if (i + 1 < s.length() && (s.charAt(i + 1) == 'D' || s.charAt(i + 1) == 'M')) {
+                    result -= 100;
+                } else {
+                    result += 100;
+                }
             } else if (ch == 'L') {
                 result += 50;
             } else if (ch == 'X') {
-                if (i + 1 < s.length() && s.charAt(i + 1) != 'X') {
+                if (i + 1 < s.length() && (s.charAt(i + 1) == 'L' || s.charAt(i + 1) == 'C' || s.charAt(i + 1) == 'D' || s.charAt(i + 1) == 'M')) {
                     result -= 10;
                 } else {
                     result += 10;
@@ -49,6 +54,6 @@ public class RomantoInteger {
 
     public static void main(String[] args) {
         RomantoInteger romantoInteger = new RomantoInteger();
-        System.out.println(romantoInteger.romanToInt("MCMXCVI"));
+        System.out.println(romantoInteger.romanToInt("DCXXI"));
     }
 }

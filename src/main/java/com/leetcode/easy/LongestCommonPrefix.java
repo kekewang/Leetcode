@@ -4,6 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ *
+ * Write a function to find the longest common prefix string amongst an array of strings.
+ *
  * Created by wangke on 2018/3/23.
  */
 public class LongestCommonPrefix {

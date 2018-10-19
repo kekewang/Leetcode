@@ -1,4 +1,4 @@
-package com.interview;
+package com.interview.wechat;
 
 /**
  *  1, 倒转单链表
@@ -51,29 +51,36 @@ class LinkNode{
     LinkNode next;
 }
 
-public class WechatAds {
+public class ReverseList {
 
     //1, 倒转单链表
     LinkNode reverseList(LinkNode head){
 
-        while(head.next != null){
-            LinkNode tmp = head.next.next;
-            head.next.next = head;
+        LinkNode next = null;
+        if (head != null && head.next!=null) {
+            next = head.next;
+            head.next = null;
+        }
 
-            head = tmp;
+        while(next != null){
+            LinkNode temp = next.next;
+
+            next.next = head;
+            head = next;
+            next = temp;
         }
         return head;
     }
 
     public static void main(String[] args){
-        WechatAds wechatAds = new WechatAds();
+        ReverseList r = new ReverseList();
         LinkNode node1 = new LinkNode(1);
         LinkNode node2 = new LinkNode(2);node1.next = node2;
         LinkNode node3 = new LinkNode(3);node2.next = node3;
         LinkNode node4 = new LinkNode(4);node3.next = node4;
         LinkNode node5 = new LinkNode(5);node4.next = node5;
 
-        LinkNode result = wechatAds.reverseList(node1);
+        LinkNode result = r.reverseList(node1);
         while(result != null){
             System.out.println(result.value);
 

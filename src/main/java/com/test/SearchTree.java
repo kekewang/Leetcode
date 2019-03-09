@@ -1,6 +1,8 @@
-package com;
+package com.test;
 
-
+/**
+ * 求一个搜索树的第nth大数
+ */
 class TreeNode {
     int value;
     TreeNode left, right;
@@ -57,6 +59,6 @@ public class SearchTree {
         treeNode2.left = treeNode1;
 
         SearchTree searchTree = new SearchTree();
-        searchTree.thirdMax(treeNode3, 3);
+        searchTree.thirdMax(treeNode3, 6);
     }
 }

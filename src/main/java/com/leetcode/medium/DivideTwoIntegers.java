@@ -25,6 +25,13 @@ public class DivideTwoIntegers {
         return result * sign;
     }
 
+    /**
+     * 一个数92 可以分为48 + 24 + 12 + 6 + 2，即6<<3 + 6<<2 + 6<<1 + 6<0,
+     *
+     * @param dividend
+     * @param divisor
+     * @return
+     */
     public int divide1(int dividend, int divisor) {
         if (dividend == Integer.MIN_VALUE && divisor == -1)
             return Integer.MAX_VALUE;

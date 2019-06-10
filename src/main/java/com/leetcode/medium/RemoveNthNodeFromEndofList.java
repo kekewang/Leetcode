@@ -1,7 +1,8 @@
 package com.leetcode.medium;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Vector;
 
 /**
  * Given a linked list, remove the n-th node from the end of list and return its head.
@@ -26,6 +27,10 @@ class ListNode {
 }
 
 public class RemoveNthNodeFromEndofList {
+
+    Vector vector;
+    ArrayList arrayList;
+    LinkedList linkedList;
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if (getNthNode(head, n) == n) {
